@@ -137,7 +137,11 @@ struct cfq_queue {
 	/* time when first request from queue completed and slice started. */
 	u64 slice_start;
 	u64 slice_end;
+<<<<<<< HEAD
 	s64 slice_resid;
+=======
+	u64 slice_resid;
+>>>>>>> 793560d50032... cfq-iosched: Convert from jiffies to nanoseconds
 
 	/* pending priority requests */
 	int prio_pending;

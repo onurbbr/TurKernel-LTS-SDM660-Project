@@ -45,6 +45,7 @@ static void patch_safetynet_flags(char *cmd)
 	patch_flag(cmd, "androidboot.flash.locked=", "1");
 	patch_flag(cmd, "androidboot.verifiedbootstate=", "green");
 	patch_flag(cmd, "androidboot.veritymode=", "enforcing");
+	patch_flag(cmd, "androidboot.vbmeta.device_state=", "locked");
 }
 
 static int __init proc_cmdline_init(void)
@@ -53,7 +54,7 @@ static int __init proc_cmdline_init(void)
 
 	/*
 	 * Patch various flags from command line seen by userspace in order to
-	 * pass SafetyNet checks.
+	 * pass SafetyNet CTS check.
 	 */
 	patch_safetynet_flags(new_command_line);
 
